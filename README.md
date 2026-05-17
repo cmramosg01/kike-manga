@@ -1,7 +1,8 @@
 # Summer Manga Quest · Kike
 
-Web estática para GitHub Pages que organiza una ruta de dibujo durante **100 días**, desde el **27 de mayo hasta el 3 de septiembre de 2026**.
+Web estática instalable como PWA para GitHub Pages. Organiza una ruta de dibujo durante **100 días**, desde el **27 de mayo hasta el 3 de septiembre de 2026**.
 
+Puede usarse desde el navegador o instalarse en móvil/tablet/ordenador mediante la opción **“Añadir a pantalla de inicio”** o **“Instalar aplicación”**, según el dispositivo.
 ## Qué incluye
 
 - Ruta por 8 arcos.
@@ -28,6 +29,18 @@ Cada sesión consiste en realizar la misión propuesta, marcar el día como comp
 Al final de cada semana, se recomienda revisar los dibujos realizados, elegir los mejores intentos y usar el apartado de evaluación con IA para recibir consejos concretos de mejora.
 
 El objetivo final es llegar al final de la ruta con una evolución visible y preparar un póster inspirado en el manga de aventura, con atención a la composición, los detalles y la intención narrativa de cada elemento.
+
+## Uso como PWA (Aplicación Web Progresiva)
+
+La herramienta puede instalarse como una pequeña aplicación desde el navegador, sin necesidad de tienda de apps.
+
+Después de abrirla una vez con conexión, podrá seguir funcionando de forma básica sin internet, ya que los archivos principales quedan guardados en el dispositivo.
+
+El progreso se guarda localmente en el navegador/dispositivo utilizado. No hay registro de usuario, servidor, analíticas ni envío de datos externos.
+
+Importante: el progreso no se sincroniza automáticamente entre móvil, tablet y ordenador. Para conservar una copia o cambiar de dispositivo, se recomienda usar las opciones de **exportar** e **importar progreso JSON**.
+
+Si se actualiza el código de la web, puede que algunos dispositivos mantengan temporalmente una versión anterior en caché. En ese caso, conviene recargar la página o reinstalar la PWA.
 
 ## Privacidad
 
