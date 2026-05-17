@@ -19,18 +19,8 @@ No tiene servidor, login, analíticas ni formularios externos. El progreso se gu
 
 ## Publicación en GitHub Pages
 
-1. Crea un repositorio llamado `kike-manga-quest`.
-2. Sube estos archivos a la raíz del repositorio:
-   - `index.html`
-   - `styles.css`
-   - `app.js`
-   - `README.md`
-3. En GitHub: `Settings → Pages`.
-4. Source: `Deploy from a branch`.
-5. Branch: `main`; folder: `/root`.
-6. Guarda.
-7. La web quedará en una URL similar a:
-   `https://TU_USUARIO.github.io/kike-manga-quest/`
+Enlace: 
+
 
 ## Nota sobre imágenes de referencia
 
