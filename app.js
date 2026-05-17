@@ -1,5 +1,5 @@
 const START = new Date('2026-05-27T00:00:00');
-const END = new Date('2026-08-31T00:00:00');
+const END = new Date('2026-09-03T00:00:00');
 const DAY = 24 * 60 * 60 * 1000;
 const TOTAL_DAYS = Math.round((END - START) / DAY) + 1;
 
