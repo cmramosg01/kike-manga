@@ -11,7 +11,7 @@ const arcs = [
   { id: 4, start: '2026-07-13', end: '2026-07-26', title: 'Personajes por piezas', desc: 'Entrar en personajes sin anatomía dura: cabezas simples, expresiones, manos básicas, siluetas y poses muy esquemáticas.', milestone: 'Hoja de expresiones y siluetas simples.' },
   { id: 5, start: '2026-07-27', end: '2026-08-09', title: 'Escenas donde pasan cosas', desc: 'Componer pequeñas escenas con varios elementos, acciones paralelas y detalles que cuenten algo.', milestone: 'Mini escena con 5 elementos o personajes con papeles distintos.' },
   { id: 6, start: '2026-08-10', end: '2026-08-23', title: 'Diseño del póster final', desc: 'Elegir formato, miniaturas, composición, foco principal, secundarios, objetos, detalles y rótulos japoneses.', milestone: 'Boceto completo del póster final.' },
-  { id: 7, start: '2026-08-24', end: '2026-08-31', title: 'Final Boss', desc: 'Acabar el póster: línea final, detalles, color o sombreado, foto/escaneo y comparación con el primer día.', milestone: 'Póster final y galería de progreso.' }
+  { id: 7, start: '2026-08-24', end: '2026-09-03', title: 'Final Boss', desc: 'Acabar el póster: línea final, detalles, color o sombreado, foto/escaneo y comparación con el primer día.', milestone: 'Póster final y galería de progreso.' }
 ];
 
 const missions = [
@@ -184,11 +184,12 @@ function renderCalendar() {
   const todayIso = getCourseToday();
 
   const months = [
-    { year: 2026, month: 4, name: 'Mayo 2026' },
-    { year: 2026, month: 5, name: 'Junio 2026' },
-    { year: 2026, month: 6, name: 'Julio 2026' },
-    { year: 2026, month: 7, name: 'Agosto 2026' }
-  ];
+  { year: 2026, month: 4, name: 'Mayo 2026' },
+  { year: 2026, month: 5, name: 'Junio 2026' },
+  { year: 2026, month: 6, name: 'Julio 2026' },
+  { year: 2026, month: 7, name: 'Agosto 2026' },
+  { year: 2026, month: 8, name: 'Septiembre 2026' }
+];
 
   months.forEach(({ year, month, name }) => {
     const wrap = document.createElement('section');
