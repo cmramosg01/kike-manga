@@ -13,6 +13,22 @@ Web estática para GitHub Pages que organiza una ruta de dibujo del 27 de mayo a
 - Exportación/importación del progreso textual en JSON.
 - Vista imprimible para guardar como PDF desde el navegador.
 
+## Cómo usar esta herramienta
+
+Esta web está pensada para acompañar una práctica diaria de dibujo manga durante **97 días**, desde el **27 de mayo hasta el 31 de agosto de 2026**.
+
+La idea no es dibujar perfecto desde el principio, sino crear hábito y avanzar poco a poco. Cada día el aprendiz puede elegir cuánto tiempo dedicar:
+
+- **Modo mínimo:** 15 minutos.
+- **Modo normal:** 45 minutos.
+- **Modo épico:** 90 minutos.
+
+Cada sesión consiste en realizar la misión propuesta, marcar el día como completado y, si se desea, subir una foto del dibujo a la galería de progreso.
+
+Al final de cada semana, se recomienda revisar los dibujos realizados, elegir los mejores intentos y usar el apartado de evaluación con IA para recibir consejos concretos de mejora.
+
+El objetivo final es llegar al final del verano con una evolución visible y preparar un póster inspirado en el manga de aventura, con atención a la composición, los detalles y la intención narrativa de cada elemento.
+
 ## Privacidad
 
 No tiene servidor, login, analíticas ni formularios externos. El progreso se guarda en el navegador con `localStorage`. Las imágenes se guardan localmente en el navegador mediante `IndexedDB`.
@@ -20,7 +36,6 @@ No tiene servidor, login, analíticas ni formularios externos. El progreso se gu
 ## Publicación en GitHub Pages
 
 Enlace: https://cmramosg01.github.io/kike-manga/
-
 
 ## Nota sobre imágenes de referencia
 
