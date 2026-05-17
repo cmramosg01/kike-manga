@@ -1,6 +1,6 @@
 # Summer Manga Quest · Kike
 
-Web estática para GitHub Pages que organiza una ruta de dibujo del 27 de mayo al 31 de agosto de 2026.
+Web estática para GitHub Pages que organiza una ruta de dibujo durante **100 días**, desde el **27 de mayo hasta el 3 de septiembre de 2026**.
 
 ## Qué incluye
 
@@ -27,7 +27,7 @@ Cada sesión consiste en realizar la misión propuesta, marcar el día como comp
 
 Al final de cada semana, se recomienda revisar los dibujos realizados, elegir los mejores intentos y usar el apartado de evaluación con IA para recibir consejos concretos de mejora.
 
-El objetivo final es llegar al final del verano con una evolución visible y preparar un póster inspirado en el manga de aventura, con atención a la composición, los detalles y la intención narrativa de cada elemento.
+El objetivo final es llegar al final de la ruta con una evolución visible y preparar un póster inspirado en el manga de aventura, con atención a la composición, los detalles y la intención narrativa de cada elemento.
 
 ## Privacidad
 
