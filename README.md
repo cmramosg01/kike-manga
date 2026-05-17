@@ -19,7 +19,7 @@ No tiene servidor, login, analíticas ni formularios externos. El progreso se gu
 
 ## Publicación en GitHub Pages
 
-Enlace: 
+Enlace: https://cmramosg01.github.io/kike-manga/
 
 
 ## Nota sobre imágenes de referencia
