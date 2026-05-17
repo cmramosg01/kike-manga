@@ -190,25 +190,15 @@
 
     <section id="datos" class="panel">
       <div class="section-heading">
-        <p class="eyebrow">Sin servidor</p>
-        <h2>Exportar, importar y publicar</h2>
-        <p>La web funciona en GitHub Pages como sitio estático. El progreso se guarda en el navegador. Exporta una copia JSON de vez en cuando.</p>
+        <p class="eyebrow">Progreso seguro</p>
+        <h2>Guardar mi progreso</h2>
+        <p>El avance se guarda en este navegador. De vez en cuando conviene exportar una copia JSON para no perder la ruta.</p>
       </div>
       <div class="data-actions">
         <button id="exportData" class="button button--primary">Exportar progreso JSON</button>
         <label class="button button--ghost file-button">Importar progreso JSON<input type="file" id="importData" accept="application/json" hidden /></label>
         <button id="resetData" class="button button--danger">Borrar progreso local</button>
       </div>
-      <details class="deploy">
-        <summary>Cómo publicarlo en GitHub Pages</summary>
-        <ol>
-          <li>Crea un repositorio llamado <code>kike-manga-quest</code>.</li>
-          <li>Sube <code>index.html</code>, <code>styles.css</code>, <code>app.js</code> y <code>README.md</code>.</li>
-          <li>En GitHub: <strong>Settings → Pages</strong>.</li>
-          <li>Source: <strong>Deploy from a branch</strong>. Rama: <strong>main</strong>. Carpeta: <strong>/root</strong>.</li>
-          <li>Guarda. La web aparecerá en una URL similar a <code>https://usuario.github.io/kike-manga-quest/</code>.</li>
-        </ol>
-      </details>
     </section>
   </main>
 
