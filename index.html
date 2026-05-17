@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Summer Manga Quest · Kike</title>
+  <meta name="description" content="Ruta interactiva de verano para recuperar el hábito de dibujo y crear un póster final inspirado en manga shōnen de aventura." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">27 mayo → 31 agosto · 97 días</p>
+      <h1>Summer Manga Quest</h1>
+      <p class="subtitle">Una ruta diaria para que Kike recupere el dibujo, aprenda a mirar como un mangaka y termine el verano con su primer póster coral.</p>
+      <div class="hero__actions">
+        <button id="startToday" class="button button--primary">Abrir misión de hoy</button>
+        <button id="printPlan" class="button button--ghost">Imprimir / guardar PDF</button>
+      </div>
+    </div>
+    <div class="hero__card" aria-label="Resumen de progreso">
+      <span class="stamp">Final Boss</span>
+      <strong>Póster final</strong>
+      <p>Una escena con muchos detalles, varias acciones simultáneas y un toque de japonés.</p>
+      <div class="progress-ring" id="progressRing"><span>0%</span></div>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Secciones principales">
+    <button class="tab is-active" data-tab="ruta">Ruta</button>
+    <button class="tab" data-tab="hoy">Hoy</button>
+    <button class="tab" data-tab="calendario">Calendario</button>
+    <button class="tab" data-tab="galeria">Galería</button>
+    <button class="tab" data-tab="ia">Evaluación IA</button>
+    <button class="tab" data-tab="biblioteca">Biblioteca</button>
+    <button class="tab" data-tab="datos">Datos</button>
+  </nav>
+
+  <main>
+    <section id="ruta" class="panel is-active">
+      <div class="section-heading">
+        <p class="eyebrow">Modo aventura</p>
+        <h2>8 arcos para llegar al póster</h2>
+        <p>No se empieza con personajes difíciles: primero línea, observación, objetos, volumen y detalles. Después vendrán escenas y personajes simples.</p>
+      </div>
+      <div id="arcsGrid" class="arcs-grid"></div>
+    </section>
+
+    <section id="hoy" class="panel">
+      <div class="section-heading">
+        <p class="eyebrow">Cadena diaria</p>
+        <h2>Misión de hoy</h2>
+        <p>El objetivo no es dibujar perfecto. El objetivo es no romper la cadena.</p>
+      </div>
+      <div class="today-layout">
+        <article class="mission-card">
+          <div class="mission-card__top">
+            <div>
+              <p id="todayDate" class="eyebrow"></p>
+              <h3 id="todayTitle">Misión</h3>
+            </div>
+            <span id="todayArc" class="pill"></span>
+          </div>
+          <p id="todayDescription"></p>
+          <div class="mode-grid">
+            <button class="mode" data-minutes="15"><strong>15 min</strong><span>modo mínimo</span></button>
+            <button class="mode" data-minutes="45"><strong>45 min</strong><span>modo normal</span></button>
+            <button class="mode" data-minutes="90"><strong>90 min</strong><span>modo épico</span></button>
+          </div>
+          <form id="dailyForm" class="daily-form">
+            <label>Fecha
+              <input type="date" id="entryDate" min="2026-05-27" max="2026-08-31" />
+            </label>
+            <label>Minutos reales
+              <input type="number" id="minutes" min="1" max="180" placeholder="15, 45 o 90" />
+            </label>
+            <div class="checks">
+              <label><input type="checkbox" id="warmup" /> Calentamiento de línea</label>
+              <label><input type="checkbox" id="exercise" /> Ejercicio principal</label>
+              <label><input type="checkbox" id="photo" /> Foto o escaneo guardado</label>
+            </div>
+            <label>Notas rápidas
+              <textarea id="notes" rows="4" placeholder="¿Qué ha salido mejor? ¿Qué repetiría mañana?"></textarea>
+            </label>
+            <button type="submit" class="button button--primary">Guardar progreso</button>
+          </form>
+        </article>
+
+        <aside class="coach-card">
+          <h3>Regla anti-frustración</h3>
+          <p>Si un día sale mal, no se corrige con 3 horas al día siguiente. Se salva con 15 minutos y una marca en el calendario.</p>
+          <hr />
+          <h3>Mini calentamiento</h3>
+          <ol>
+            <li>20 líneas rectas lentas.</li>
+            <li>20 círculos imperfectos.</li>
+            <li>5 cajas simples.</li>
+            <li>1 objeto pequeño de la mesa.</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section id="calendario" class="panel">
+      <div class="section-heading">
+        <p class="eyebrow">Hábito visible</p>
+        <h2>Calendario de progreso</h2>
+        <p>Haz clic en un día para cargarlo en la misión diaria. Los días guardados aparecen marcados.</p>
+      </div>
+      <div class="calendar-tools">
+        <span id="streakText" class="pill">Racha: 0 días</span>
+        <span id="totalText" class="pill">Total: 0 / 97</span>
+      </div>
+      <div id="calendar" class="calendar"></div>
+    </section>
+
+    <section id="galeria" class="panel">
+      <div class="section-heading">
+        <p class="eyebrow">Portfolio privado en el navegador</p>
+        <h2>Galería de dibujos</h2>
+        <p>Sube fotos de ejercicios y del póster final. Las imágenes se guardan en este navegador mediante IndexedDB; no se suben a ningún servidor.</p>
+      </div>
+      <form id="galleryForm" class="gallery-form">
+        <label>Fecha
+          <input type="date" id="galleryDate" min="2026-05-27" max="2026-08-31" />
+        </label>
+        <label>Título
+          <input type="text" id="galleryTitle" placeholder="Ej.: Objetos de escritorio, semana 2" />
+        </label>
+        <label>Imagen
+          <input type="file" id="galleryFile" accept="image/*" />
+        </label>
+        <label>Comentario
+          <textarea id="galleryComment" rows="3" placeholder="Qué quería practicar y qué mejoraría"></textarea>
+        </label>
+        <button type="submit" class="button button--primary">Añadir a galería</button>
+      </form>
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </section>
+
+    <section id="ia" class="panel">
+      <div class="section-heading">
+        <p class="eyebrow">Entrenador semanal</p>
+        <h2>Generador de prompt para IA</h2>
+        <p>Copia este prompt cada domingo y adjunta 2 o 3 fotos: el mejor dibujo, uno difícil y el ejercicio final de la semana.</p>
+      </div>
+      <div class="prompt-card">
+        <label>Semana o arco evaluado
+          <input type="text" id="weekName" placeholder="Ej.: Semana 3 · Volumen y perspectiva" />
+        </label>
+        <label>Objetivo de la semana
+          <input type="text" id="weekGoal" placeholder="Ej.: Dibujar objetos como cajas, cilindros y formas simples" />
+        </label>
+        <button id="makePrompt" class="button button--primary">Generar prompt</button>
+        <textarea id="aiPrompt" rows="16" readonly></textarea>
+        <button id="copyPrompt" class="button button--ghost">Copiar prompt</button>
+      </div>
+      <div class="rubric">
+        <h3>Rúbrica 1-4</h3>
+        <div class="rubric-grid">
+          <span>Línea</span><span>Proporción</span><span>Volumen</span><span>Limpieza</span><span>Detalle narrativo</span><span>Composición</span><span>Expresividad</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="biblioteca" class="panel">
+      <div class="section-heading">
+        <p class="eyebrow">Recursos</p>
+        <h2>Biblioteca de entrenamiento</h2>
+        <p>Recursos libres, vídeos y libros útiles. No hace falta usarlos todos: sirven como apoyo para cada arco.</p>
+      </div>
+      <div class="resource-grid">
+        <article><h3>Fundamentos</h3><a href="https://drawabox.com/" target="_blank" rel="noreferrer">Drawabox</a><p>Línea, cajas, cilindros y construcción. Usar en dosis pequeñas.</p></article>
+        <article><h3>Vídeo</h3><a href="https://www.proko.com/course/drawing-basics" target="_blank" rel="noreferrer">Proko · Drawing Basics</a><p>Apoyo visual para fundamentos de dibujo.</p></article>
+        <article><h3>Detalles</h3><a href="https://theetheringtonbrothers.blogspot.com/p/every-how-to-think-when-you-draw.html" target="_blank" rel="noreferrer">Etherington Brothers</a><p>Banco enorme de ideas para objetos, texturas, acción y mundo visual.</p></article>
+        <article><h3>Referencias</h3><a href="https://line-of-action.com/" target="_blank" rel="noreferrer">Line of Action</a><p>Sesiones de práctica con referencias. Mejor a partir de julio.</p></article>
+        <article><h3>Digital futuro</h3><a href="https://krita.org/" target="_blank" rel="noreferrer">Krita</a><p>Software libre para entintado y color si más adelante pasa a digital.</p></article>
+        <article><h3>Japonés visual</h3><a href="https://www.tofugu.com/japanese/japanese-onomatopoeia/" target="_blank" rel="noreferrer">Tofugu · Onomatopeyas</a><p>Ideas para SFX japoneses en el póster.</p></article>
+      </div>
+      <div class="books">
+        <h3>Libros candidatos</h3>
+        <ul>
+          <li><strong>One Piece Color Walk Compendium</strong> · inspiración visual y color.</li>
+          <li><strong>How to Draw</strong>, Scott Robertson · construcción, objetos y perspectiva.</li>
+          <li><strong>Framed Ink</strong>, Marcos Mateu-Mestre · composición narrativa.</li>
+          <li><strong>Manga in Theory and Practice</strong>, Hirohiko Araki · lectura de oficio para más adelante.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="datos" class="panel">
+      <div class="section-heading">
+        <p class="eyebrow">Sin servidor</p>
+        <h2>Exportar, importar y publicar</h2>
+        <p>La web funciona en GitHub Pages como sitio estático. El progreso se guarda en el navegador. Exporta una copia JSON de vez en cuando.</p>
+      </div>
+      <div class="data-actions">
+        <button id="exportData" class="button button--primary">Exportar progreso JSON</button>
+        <label class="button button--ghost file-button">Importar progreso JSON<input type="file" id="importData" accept="application/json" hidden /></label>
+        <button id="resetData" class="button button--danger">Borrar progreso local</button>
+      </div>
+      <details class="deploy">
+        <summary>Cómo publicarlo en GitHub Pages</summary>
+        <ol>
+          <li>Crea un repositorio llamado <code>kike-manga-quest</code>.</li>
+          <li>Sube <code>index.html</code>, <code>styles.css</code>, <code>app.js</code> y <code>README.md</code>.</li>
+          <li>En GitHub: <strong>Settings → Pages</strong>.</li>
+          <li>Source: <strong>Deploy from a branch</strong>. Rama: <strong>main</strong>. Carpeta: <strong>/root</strong>.</li>
+          <li>Guarda. La web aparecerá en una URL similar a <code>https://usuario.github.io/kike-manga-quest/</code>.</li>
+        </ol>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Hecho para Kike · Verano 2026 · “Cada línea cuenta algo, cada detalle tiene una misión”.</p>
+  </footer>
+
+  <template id="arcTemplate">
+    <article class="arc-card">
+      <div class="arc-card__head"><span class="arc-num"></span><span class="arc-dates"></span></div>
+      <h3></h3>
+      <p></p>
+      <strong>Hito:</strong>
+      <p class="milestone"></p>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
