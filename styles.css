@@ -156,7 +156,7 @@ main { padding: clamp(1rem, 4vw, 4rem) clamp(1rem, 5vw, 5rem); }
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
-.arc-card, .mission-card, .coach-card, .prompt-card, .rubric, .resource-grid article, .books, .deploy, .gallery-form, .gallery-item {
+.arc-card, .mission-card, .coach-card, .prompt-card, .rubric, .resource-grid article, .books, .gallery-form, .gallery-item {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -216,8 +216,6 @@ textarea { resize: vertical; }
 .rubric-grid span { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: .55rem .75rem; font-weight: 800; text-align: center; }
 .resource-grid article p, .books li { color: var(--muted); }
 .books { margin-top: 1rem; }
-.deploy { margin-top: 1rem; }
-.deploy summary { cursor: pointer; font-weight: 900; }
 code { background: rgba(0,0,0,.06); padding: .1rem .3rem; border-radius: .35rem; }
 .footer { padding: 2rem clamp(1rem, 5vw, 5rem); color: var(--muted); text-align: center; }
 
@@ -232,5 +230,5 @@ code { background: rgba(0,0,0,.06); padding: .1rem .3rem; border-radius: .35rem;
   .tabs, .hero__actions, .data-actions, .gallery-form, .button { display: none !important; }
   .panel { display: block !important; break-inside: avoid; margin-bottom: 1.2rem; }
   .hero, main { padding: 1rem; }
-  .arc-card, .mission-card, .coach-card, .prompt-card, .rubric, .resource-grid article, .books, .deploy, .gallery-item { box-shadow: none; background: white; }
+  .arc-card, .mission-card, .coach-card, .prompt-card, .rubric, .resource-grid article, .books, .gallery-item { box-shadow: none; background: white; }
 }
